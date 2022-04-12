@@ -20,18 +20,18 @@ class CreateRoom extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const l=[];
-			axios.get(`http://localhost:5000/users/${this.state.currentuser_id}`)
+			axios.get(`https://online-tutor-portal.herokuapp.com/users/${this.state.currentuser_id}`)
 			.then((res)=>{
 				l.push(res.data._id);
 			})
 			.catch(error=>console.error(error));
-      axios.get(`http://localhost:5000/users/${this.state.user_id}`)
+      axios.get(`https://online-tutor-portal.herokuapp.com/users/${this.state.user_id}`)
 			.then((res)=>{
 				l.push(res.data._id);
 			})
 			.catch(error=>console.error(error));
     const req={name:this.state.room_name,userIds:l,type:"consumer-to-support"};
-    axios.post(`http://localhost:5000/room/initiate`, req)
+    axios.post(`https://online-tutor-portal.herokuapp.com/room/initiate`, req)
       .then((response) => {
         console.log(response);
       })

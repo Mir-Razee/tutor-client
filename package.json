@@ -2,7 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:5000/",
+  "proxy": "https://online-tutor-portal.herokuapp.com/",
   "dependencies": {
     "@autocomplete/material-ui": "^0.0.17",
     "@emotion/react": "^11.8.2",

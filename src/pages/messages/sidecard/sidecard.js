@@ -28,7 +28,7 @@ const Sidecard = ({ sidecard }) => {
 
 	useEffect(()=>{
 		const getAllRoomData=async()=>{
-			await axios.get(`http://localhost:5000/room/${sidecard}`)
+			await axios.get(`https://online-tutor-portal.herokuapp.com/room/${sidecard}`)
 			.then((res)=>{
 				getRoomData(res.data);
 				// console.log(res);

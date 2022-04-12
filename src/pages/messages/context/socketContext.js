@@ -3,7 +3,7 @@ import io from "socket.io-client";
 
 const SOCKET_URL = window.location.origin.includes("localhost")
 	? "http://localhost:5000"
-	: "https://whatsapp-web-clone-backend.herokuapp.com/";
+	: "https://online-tutor-portal.herokuapp.com/";
 
 const socket = io(SOCKET_URL);
 

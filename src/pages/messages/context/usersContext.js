@@ -53,7 +53,7 @@ const UsersProvider = ({ children }) => {
 
 	const addNewMessage = async (userId,roomId, message) => {
 		const req = {messageText: message,user:userId};
-		await axios.post(`http://localhost:5000/room/${roomId}/message`,req)
+		await axios.post(`https://online-tutor-portal.herokuapp.com/room/${roomId}/message`,req)
 		.then((res)=>{
 			console.log(res);
 		})

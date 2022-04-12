@@ -15,7 +15,7 @@ const Sidebar = () => {
 	const [rooms,getRooms]=useState('');
 	useEffect(()=>{
 		const getIdbyemail=async (id)=>{
-			await axios.get(`http://localhost:5000/users/${id}`)
+			await axios.get(`https://online-tutor-portal.herokuapp.com/users/${id}`)
 			.then((res)=>{
 				const tid=res.data._id;
 				
@@ -26,7 +26,7 @@ const Sidebar = () => {
 		}
 		
 		const getAllRooms=async (Id)=>{
-			await axios.get(`http://localhost:5000/room/allrooms/${Id}`)
+			await axios.get(`https://online-tutor-portal.herokuapp.com/room/allrooms/${Id}`)
 			.then((res)=>{
 				const rooms=res.data.roomIds;
 				getRooms(rooms);

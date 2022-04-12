@@ -22,7 +22,7 @@ const Chat = () => {
 	const {id}=useParams();
 	useEffect(()=>{
 		const getIdbyemail=async (e)=>{
-			await axios.get(`http://localhost:5000/users/${e}`)
+			await axios.get(`https://online-tutor-portal.herokuapp.com/users/${e}`)
 			.then((res)=>{
 				const tid=res.data._id;
 				getId(tid);
@@ -46,7 +46,7 @@ const Chat = () => {
 	const [roomName,getRoomName]=useState('');
 	useEffect(()=>{
 		const getAllRoomData=async()=>{
-			await axios.get(`http://localhost:5000/room/${id}`)
+			await axios.get(`https://online-tutor-portal.herokuapp.com/room/${id}`)
 			.then((res)=>{
 				getRoomData(res.data);
 				getRoomName(res.data.name);
@@ -101,7 +101,7 @@ const Chat = () => {
 	const submitNewMessage = async () => {
 		// addNewMessage(userId,id, newMessage);
 		const req = {messageText: newMessage,user:userId};
-		await axios.post(`http://localhost:5000/room/${id}/message`,req)
+		await axios.post(`https://online-tutor-portal.herokuapp.com/room/${id}/message`,req)
 		.then((res)=>{
 			// console.log(res);
 		})
